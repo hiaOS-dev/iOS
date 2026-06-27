@@ -11,8 +11,11 @@ window.HIA = window.HIA || {};
   function bind() { ({ el, mdLite, toast, esc } = HIA.ui); } // resolved at build time
 
   function needsModel() {
-    if (!S().get('apiKey') || !S().get('model')) {
-      toast('Add your Ollama key & model in Settings first');
+    // Only a model is required. The API key is optional — a proxy can inject it
+    // server-side (then the app sends none). Missing/invalid auth surfaces as a
+    // clear error from the endpoint rather than a hard gate here.
+    if (!S().get('model')) {
+      toast('Pick a model in Settings first');
       return true;
     }
     return false;
