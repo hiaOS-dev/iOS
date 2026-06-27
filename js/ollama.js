@@ -4,10 +4,13 @@
    in if a network ever blocks direct browser calls. */
 window.HIA = window.HIA || {};
 (function () {
-  // A few known cloud-hosted models, offered as quick picks during setup.
+  // Suggestion chips only — these just PRE-FILL the editable model field. The
+  // model id is always sent to the API exactly as the user typed it (nothing is
+  // appended). Direct-API ids are bare (e.g. gpt-oss:120b); if your account wants
+  // the local cloud tag, type the suffix yourself (e.g. gpt-oss:20b-cloud).
   const PRESETS = [
-    'gpt-oss:120b', 'gpt-oss:20b', 'deepseek-v3.1:671b',
-    'qwen3-coder:480b', 'kimi-k2:1t', 'glm-4.6'
+    'gpt-oss:120b', 'gpt-oss:20b', 'qwen3-coder:480b',
+    'deepseek-v3.1:671b', 'kimi-k2:1t', 'glm-4.6', 'qwen3.5', 'minimax-m3'
   ];
 
   function base() {

@@ -370,7 +370,8 @@ h2 { font-size: 22px; font-weight: 700; letter-spacing: -0.02em; }
 .ob-model .ic { color: var(--accent); }
 .ob-model.on { background: rgba(255,255,255,0.16); border-color: var(--glass-line); }
 .om-name { flex: 1; font-size: 15px; font-weight: 600; word-break: break-all; }
-.om-tick { color: var(--accent); }
+.om-tick { color: var(--accent); opacity: 0; transition: opacity 0.2s; }
+.ob-model.on .om-tick { opacity: 1; }
 
 /* ===================================================================
    Two-slot tweaks + reduced motion

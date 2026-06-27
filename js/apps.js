@@ -453,8 +453,9 @@ window.HIA = window.HIA || {};
 
       // --- Model & connection ---
       body.append(section('Model & connection', HIA.icon('key'), (sec) => {
-        const model = el('input', { className: 'field', value: S().get('model'), placeholder: 'e.g. gpt-oss:120b' });
+        const model = el('input', { className: 'field', value: S().get('model'), placeholder: 'e.g. gpt-oss:120b  (or gpt-oss:20b-cloud)' });
         model.addEventListener('input', () => S().set('model', model.value.trim()));
+        const modelNote = el('div', { className: 'muted small', text: 'Sent to the API exactly as typed — add any -cloud / :cloud suffix yourself.' });
         const presetRow = el('div', { className: 'chip-row wrap' });
         O().PRESETS.forEach((p) => presetRow.append(el('button', { className: 'chip', text: p, onclick: () => { model.value = p; S().set('model', p); } })));
         const refresh = el('button', { className: 'btn ghost small', html: HIA.icon('refresh') + 'List my models', onclick: async () => {
@@ -472,7 +473,7 @@ window.HIA = window.HIA || {};
         keyWrap.append(keyIn, eye);
         const baseIn = el('input', { className: 'field', value: S().get('baseUrl'), placeholder: 'https://ollama.com' });
         baseIn.addEventListener('input', () => S().set('baseUrl', baseIn.value.trim()));
-        sec.append(label('Model'), model, presetRow, refresh, label('API key'), keyWrap, label('Base URL (advanced)'), baseIn);
+        sec.append(label('Model'), model, modelNote, el('div', { className: 'field-label', text: 'Suggestions — tap to fill' }), presetRow, refresh, label('API key'), keyWrap, label('Base URL (advanced)'), baseIn);
       }));
 
       // --- Identity ---

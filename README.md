@@ -45,8 +45,12 @@ tall screen.
 ## Setup
 
 1. Get an API key at **[ollama.com](https://ollama.com)** → *Settings → Keys*.
-2. Open the app, paste the key, and choose a cloud model (e.g. `gpt-oss:120b`,
-   `deepseek-v3.1:671b`, `qwen3-coder:480b`). The key stays on your device.
+2. Open the app, paste the key, and type your **model id**. It's sent to the API
+   **exactly as typed — nothing is appended.** The direct API uses bare ids like
+   `gpt-oss:120b`, `deepseek-v3.1:671b`, `qwen3-coder:480b`; if your account
+   expects the local cloud tag, type it yourself (e.g. `gpt-oss:20b-cloud`). The
+   suggestion chips only pre-fill the field so you can edit it. The key stays on
+   your device.
 
 ## Install on your iPhone
 
