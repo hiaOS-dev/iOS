@@ -5,6 +5,8 @@ composed around **Ollama Cloud**. It's the iOS reimagining of
 [hiaOS](https://github.com/) — same liquid-glass soul, rebuilt for one hand and a
 tall screen.
 
+**▶︎ Live: https://hiaos-ios.github.io/hiaos/** — open in Safari on iPhone and *Add to Home Screen*.
+
 <p align="center"><img src="icons/icon-512.png" width="120" alt="hiaOS icon"></p>
 
 ## What makes it iPhone-native
